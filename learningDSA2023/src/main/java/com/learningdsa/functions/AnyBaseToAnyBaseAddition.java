@@ -8,6 +8,12 @@ public class AnyBaseToAnyBaseAddition {
         int n1 = sc.nextInt();
         int n2 = sc.nextInt();
         int b = sc.nextInt();
+        System.out.println(getSum(b, n1, n2));
+
+    }
+
+    public static int getSum(int b, int n1, int n2) {
+
         int c = 0;
         int p = 1;
         int d = 0;
@@ -25,7 +31,6 @@ public class AnyBaseToAnyBaseAddition {
             p = p * 10;
 
         }
-
-
+        return num;
     }
 }

@@ -24,7 +24,7 @@ public class AnyBaseToAnyBaseSubtraction {
                 d = d2 - d1;
             } else {
                 c = -1;
-                d = d2 + 8 - d1;
+                d = d2 + b - d1;
             }
             sub = sub + d * p;
             p = p * 10;
