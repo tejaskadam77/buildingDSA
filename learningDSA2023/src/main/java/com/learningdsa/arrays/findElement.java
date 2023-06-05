@@ -2,9 +2,8 @@ package com.learningdsa.arrays;
 
 import java.util.Scanner;
 
-public class SpanOfArray {
+public class findElement {
     public static void main(String[] args) {
-
         System.out.println("enter length");
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
@@ -13,23 +12,20 @@ public class SpanOfArray {
         for (int i = 0; i < a.length; i++) {
             a[i] = sc.nextInt();
         }
+        System.out.println("enter no to find");
+        int nf = sc.nextInt();
 
-        System.out.println(spanOfArray(a));
-
+        System.out.println(findIndex(a, nf));
     }
 
-    public static int spanOfArray(int a[]) {
-        int max = 0;
-        int min = 0;
-        max = min = a[0];
+    public static int findIndex(int a[], int nf) {
+        int idx = -1;
         for (int i = 0; i < a.length; i++) {
-            if (a[i] > max) {
-                max = a[i];
-            }
-            if (a[i] < min) {
-                min = a[i];
+            if (a[i] == nf) {
+                idx = i;
+                break;
             }
         }
-        return max - min;
+        return idx;
     }
 }

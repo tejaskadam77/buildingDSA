@@ -2,9 +2,8 @@ package com.learningdsa.arrays;
 
 import java.util.Scanner;
 
-public class SpanOfArray {
+public class ReverseArray {
     public static void main(String[] args) {
-
         System.out.println("enter length");
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
@@ -14,22 +13,14 @@ public class SpanOfArray {
             a[i] = sc.nextInt();
         }
 
-        System.out.println(spanOfArray(a));
+        for (int i = 0, j = a.length - 1; i < n / 2; i++, j--) {
+            int temp = a[i];
+            a[i] = a[j];
+            a[j] = temp;
 
-    }
-
-    public static int spanOfArray(int a[]) {
-        int max = 0;
-        int min = 0;
-        max = min = a[0];
-        for (int i = 0; i < a.length; i++) {
-            if (a[i] > max) {
-                max = a[i];
-            }
-            if (a[i] < min) {
-                min = a[i];
-            }
         }
-        return max - min;
+        for (int var : a) {
+            System.out.println(var);
+        }
     }
 }

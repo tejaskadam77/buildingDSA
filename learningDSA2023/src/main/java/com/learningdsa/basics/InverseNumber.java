@@ -21,5 +21,5 @@ public class InverseNumber {
 		System.out.println(inv);
 	}
 
-	
+
 }

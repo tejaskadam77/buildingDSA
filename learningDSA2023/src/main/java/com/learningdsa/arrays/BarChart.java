@@ -2,9 +2,8 @@ package com.learningdsa.arrays;
 
 import java.util.Scanner;
 
-public class SpanOfArray {
+public class BarChart {
     public static void main(String[] args) {
-
         System.out.println("enter length");
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
@@ -13,23 +12,21 @@ public class SpanOfArray {
         for (int i = 0; i < a.length; i++) {
             a[i] = sc.nextInt();
         }
-
-        System.out.println(spanOfArray(a));
-
-    }
-
-    public static int spanOfArray(int a[]) {
-        int max = 0;
-        int min = 0;
-        max = min = a[0];
+        int max = a[0];
         for (int i = 0; i < a.length; i++) {
             if (a[i] > max) {
                 max = a[i];
             }
-            if (a[i] < min) {
-                min = a[i];
-            }
         }
-        return max - min;
+        for (int i = max; i >= 1; i--) {
+            for (int j = 0; j < a.length; j++) {
+                if (a[i] >= i) {
+                    System.out.print("\t*");
+                } else {
+                    System.out.print("\t");
+                }
+            }
+            System.out.println();
+        }
     }
 }

@@ -7,6 +7,22 @@ public class GCD {
 		Scanner sc = new Scanner(System.in);
 		int n1 = sc.nextInt();
 		int n2= sc.nextInt();
+		int div;
+		if(n1>n2)
+			div=n2;
+		else
+			div=n1;
+		{
+			while(div>=2)
+			{
+				if(n2%div==0 && n1%div==0)
+				{
+					System.out.println(div);
+					break;
+				}
+				div--;
+			}
+		}
 		int on1=n1;int on2=n2;
 			while(n1%n2!=0)
 			{

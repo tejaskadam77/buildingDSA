@@ -19,7 +19,7 @@ public static void main(String[] args) {
 	
 	int div=(int)Math.pow(10,noOfRotations);
 	int fp=n/div;
-	int sp=n%div;
+	int  sp=n%div;
 	int rotatedNumber=sp*(int)Math.pow(10, noOfDigits-noOfRotations)+fp;
 	
 	System.out.println("og =  "+ n + "\nrotated no = "+ rotatedNumber);
