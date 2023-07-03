@@ -3,24 +3,28 @@ package com.learningdsa.basics;
 import java.util.Scanner;
 
 public class PrimeNumber {
-	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		int low = sc.nextInt();
-		int high = sc.nextInt();
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int low = sc.nextInt();
+        int high = sc.nextInt();
 
-		for (int i = low; i <= high; i++) {
-			boolean isPrime = isPrime(i);
-			System.out.println(isPrime);
-		}
-	}
+        for (int i = low; i <= high; i++) {
 
-	private static boolean isPrime(int n) {
+            //check if number is prime or not and yes then print
+            int count = 0;
+            for (int div = 2; div * div <= i; div++) {
 
-		for (int i = 2; i * i <= n; i++) {
-			if (n % i == 0)
-				return false;
-		}
-		// TODO Auto-generated method stub
-		return true;
-	}
+                if (i % div == 0) {
+                    count++;
+                	break;
+                }
+            }
+            if (count == 0) {
+                System.out.println(i);
+            }
+
+
+        }
+
+    }
 }
