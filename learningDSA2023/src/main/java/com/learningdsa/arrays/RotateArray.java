@@ -14,6 +14,10 @@ public class RotateArray {
         }
         System.out.println("enter no of rotations ");
         int k = sc.nextInt();
+        for (int j=0;j<k;j++)
+        {
+            rotateby1(a);
+        }
 
 
     }
