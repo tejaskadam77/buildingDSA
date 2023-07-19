@@ -20,7 +20,7 @@ public class SubArray {
             {
                 for (int k=i;k<=j;k++) {
 
-                    System.out.println(a[k]);
+                    System.out.print(a[k]);
                 }
                 System.out.println();
 
