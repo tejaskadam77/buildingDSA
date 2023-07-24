@@ -21,7 +21,7 @@ public class SaddlePoint {
 
             int svj = 0;
             for (int j = 1; j < a[0].length; j++) {
-                if (a[i][j] < a[i][j]) {
+                if (a[i][j-1] < a[i][j]) {
                     svj = j;
                 }
             }
