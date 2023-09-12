@@ -13,6 +13,34 @@ public class SingleLinkedList {
 
     }
 
+    public void deleteFirstOccurenceWithKey(int data) {
+        if (head == null) {
+            System.out.println("list is already empty");
+
+        } else {
+            SLLNode current = head;
+            SLLNode prev = null;
+
+            while (current != null) {
+                if (current.data == data) {
+                    if (prev == null) {
+                        head = head.next;
+                    } else {
+                        prev.next = current.next;
+                        current = null;
+                    }
+                    break;
+                } else {
+                    prev = current;
+                    current = current.next;
+                }
+
+            }
+
+        }
+
+    }
+
     public void insert(int data) {
         SLLNode newNode = new SLLNode(data);
         if (head == null) {
@@ -55,6 +83,7 @@ public class SingleLinkedList {
             }
         }
     }
+
     public void deleteWithData(int data) {
 
         if (head == null) {
@@ -62,7 +91,7 @@ public class SingleLinkedList {
         } else {
             SLLNode prev = null;
             SLLNode current = head;
-            while (current.next != null && current.data!=data) {
+            while (current.next != null && current.data != data) {
                 prev = current;
                 current = current.next;
             }
@@ -128,14 +157,84 @@ public class SingleLinkedList {
 
     }
 
+    public void reverse() {
+        if (head == null) {
+            System.out.println("list is already empty");
+        } else {
+            SLLNode cur = head;
+            SLLNode prev = null;
+            while (cur != null) {
+                SLLNode nextNode = cur.next;
+                cur.next = prev;
+                prev = cur;
+                cur = nextNode;
+            }
+            head=prev;
+        }
+    }
+
+    
+    public void deleteDuplicates() {
+        if(head==null||head.next==null)
+            return;
+        SLLNode ptr1=head;
+        SLLNode ptr2=head.next;
+        while(ptr2!=null)
+        {
+            if(ptr1.data==ptr2.data)
+            {
+                ptr1.next=ptr2.next;
+            }
+            else
+            {
+                ptr1=ptr2;
+            }
+            ptr2=ptr2.next;
+        }
+    }
+
+    public void partition(int x)
+    {
+        if(head==null||head.next==null)
+            return;
+        else
+        {
+            SLLNode prev=head;
+            SLLNode cur=head.next;
+            while(cur!=null)
+            {
+                if(cur.data<x)
+                {
+
+                    prev.next=cur.next;
+                    cur.next=head;
+                    head=cur;
+                    cur=prev.next;
+                }
+                else
+                {
+                    prev=cur;
+                    cur=cur.next;
+                }
+            }
+
+        }
+    }
     public static void main(String[] args) {
         SingleLinkedList s = new SingleLinkedList();
-        s.printList();
+
         s.insert(10);
         s.insert(20);
+        s.insert(20);
         s.insert(30);
-        s.deleteFromEnd();
+        s.insert(30);
         s.printList();
+        s.deleteDuplicates();
+
+        s.printList();
+//        System.out.println("++++++++++++++++++++++++++");
+//        s.reverse();
+//        s.printList();
 
     }
 }

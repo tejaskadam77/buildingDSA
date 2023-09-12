@@ -4,6 +4,30 @@ public class DLLList {
 
     DLLNode head;
 
+    public static void main(String[] args) {
+        DLLList list=new DLLList();
+        DLLNode first=new DLLNode(10);
+
+
+
+        DLLNode sec=new DLLNode(20);
+        DLLNode third=new DLLNode(30);
+        DLLNode fourth=new DLLNode(40);
+        list.head=first;
+        first.next=sec;
+        sec.prev=first;
+        sec.next=third;
+        third.prev=sec;
+        third.next=fourth;
+        fourth.prev=third;
+
+        list.printDLL();
+        list.reverseList();
+        System.out.println("++++++++++++++++++++++++++++++");
+        list.printDLL();
+
+    }
+
 
     public void insertAtBeginning(int data) {
         DLLNode dl = new DLLNode(data);
@@ -51,6 +75,28 @@ public class DLLList {
         while (currentNode != null) {
             System.out.println(currentNode.data);
             currentNode = currentNode.next;
+        }
+    }
+
+    public void reverseList()
+    {
+        DLLNode curr=head;
+        if(curr==null )
+        {
+            System.out.println("list is already empty");
+        }
+        else
+        {
+            DLLNode prev=null;
+            while(curr!=null)
+            {
+                DLLNode nextNode=curr.next;
+                curr.prev=curr.next;
+                curr.next=prev;
+                prev=curr;
+                curr=nextNode;
+            }
+            head=prev;
         }
     }
 
