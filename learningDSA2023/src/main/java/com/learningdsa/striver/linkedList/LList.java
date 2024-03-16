@@ -42,5 +42,27 @@ public class LList {
 
     }
 
+    private static Node findLoopWithPosition(Node head) {
+        Node slow=head;
+        Node fast=head;
+        while(fast!=null && fast.next!=null)
+        {
+            slow= slow.next;
+            fast=fast.next.next;
+            if(slow==fast)
+                slow=head;
+            while(slow!=fast)
+            {
+                slow=slow.next;
+                head=head.next;
+
+            }
+            if(slow==fast)
+            return slow;
+        }
+        return null;
+
+    }
+
 
 }
