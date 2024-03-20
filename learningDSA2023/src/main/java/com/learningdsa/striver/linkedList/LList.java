@@ -1,5 +1,6 @@
 package com.learningdsa.striver.linkedList;
 
+import learningJava.Basic;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 class Node {
@@ -21,7 +22,7 @@ class ListNode {
     }
 }
 
-public class LList {
+public class LList extends Basic{
     public static void print (ListNode head)
     {
         ListNode temp=head;
@@ -35,6 +36,9 @@ public class LList {
 
 
         public static void main(String[] args) {
+            Basic b = new Basic();
+
+
             ListNode head=new ListNode(10);
             head.next=new ListNode(20);
             head.next.next=new ListNode (30);
